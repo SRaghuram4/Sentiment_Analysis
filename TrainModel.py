@@ -345,7 +345,7 @@ class TrainModel:
         print("False Positive Rate : {0}".format(conf_matrix[0][1])/(conf_matrix[0][1]+conf_matrix[0][0]))
         print("Accuracy : {0}".format((conf_matrix[0][1]+conf_matrix[1][1])/(conf_matrix[0][1]+conf_matrix[1][1]+
                                                                              conf_matrix[0][0]+conf_matrix[1][0])))
-
+        return conf_matrix
 
 
 if __name__ == "__main__":
