@@ -359,9 +359,11 @@ if __name__ == "__main__":
     batch_size = 300
     shuffle = True
     numberOf_hidden_units = 256
+    train_data_path = "\your\path"
+    test_data_path = "\your\path"
     glove_path = '\your\path'
 
-    sentiment = TrainModel(numOfClasses=numOfClasses, glove_path=glove_path)
+    sentiment = TrainModel(train_data_path, test_data_path, numOfClasses=numOfClasses, glove_path=glove_path)
 
     # Reading training data from the disk
     X_train, Y_train = sentiment.readData(train=True)
@@ -381,3 +383,5 @@ if __name__ == "__main__":
     # compute confusion matrix
     cm = sentiment.computeConfusionMatric(pred_test, Y_test)
 
+    # Print the metrics
+    pm = sentiment.print_metrics(Y_test, pred_test)
